@@ -31,8 +31,10 @@ public class User implements UserDetails {
 
     public User() {
     }
-
-
+    public User(String name, int age, String email, String pass, Set<Role> roles){
+        this(name, age, email, pass);
+        this.roles = roles;
+    }
 
     public User(String name, String lastName, int age, String email, String pass) {
         this.name = name;
@@ -40,6 +42,14 @@ public class User implements UserDetails {
         this.age = age;
         this.email = email;
         this.pass = pass;
+    }
+
+    public User(String name, int age, String email, String pass) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.pass = pass;
+
     }
 
 
